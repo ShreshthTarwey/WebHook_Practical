@@ -15,9 +15,9 @@ pipeline{
         stage('2.Tagging and Pushing the image'){
             steps{
                 echo 'Tagging the container'
-                bat 'docker login -u ${DOCKER_USER} -p ${DOCKER_TOKEN}'
-                bat 'docker tag practical-backend:latest ${DOCKER_USER}/practical-backend:latest'
-                bat 'docker push ${DOCKER_USER}/practical-backend:latest'
+                bat 'docker login -u %DOCKER_USER% -p %DOCKER_TOKEN%'
+                bat 'docker tag practical-backend:latest %DOCKER_USER%/practical-backend:latest'
+                bat 'docker push %DOCKER_USER%/practical-backend:latest'
             }
         }
 
